@@ -20,7 +20,7 @@ Pin.create(
   resource_type: "ruby")
 Pin.create(
   title: 'Ruby Quiz', 
-  url: 'http://rubyquiz.org', 
+  url: 'http://rubyquiz.com', 
   text: "A collection of quizzes on the Ruby programming language.", 
   slug: "ruby-quiz",
   resource_type: "ruby")
@@ -33,7 +33,7 @@ Pin.create(
   resource_type: "rails")
 Pin.create(
   title: 'Ruby Monk', 
-  url: 'http://rubymonk.com', 
+  url: 'http://rubymonk.org', 
   text: "The Ruby Primer is a free interactive book that helps you learn Ruby. Discover Ruby idioms, learn 
     lessons and solve problems, all in your browser!",
   slug: "ruby-monk",
