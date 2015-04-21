@@ -12,6 +12,9 @@ class PinsController < ApplicationController
       @pin = Pin.find_by_slug(params[:slug])
       render :show 
   end
-    
+  
+  def new
+      @pin = Pin.create(params[:new]) 
+  end
     
 end
