@@ -1,11 +1,11 @@
 class PinsController < ApplicationController
   
   def index
-    @pins = Pin.all
+      @pins = Pin.all
   end
   
   def show
-    @pin = Pin.find(params[:id])
+      @pin = Pin.find(params[:id])
   end
   
   def show_by_name
@@ -17,4 +17,22 @@ class PinsController < ApplicationController
       @pin = Pin.create(params[:new]) 
   end
     
-end
+  def create
+      @pin = Pin.create(pin_params)
+      
+      if @pin.valid?
+          @pin.save
+          redirect_to pin_path(@pin)
+      else
+          @error = @pin.errors
+          render :new
+      end
+  end
+
+    private 
+    
+    def pin_params
+        params.require(:pin).permit(:title, :url, :slug, :text, :category_id)
+    end
+    
+end    
