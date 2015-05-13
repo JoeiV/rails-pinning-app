@@ -13,12 +13,12 @@
             <div class="pin-header row">
                 
             <div class="logo-thumbnail col-xs-3">
-                <% if "#{pin.category_id}" == "rails" %>
+                <% if "#{pin.category.name}" == "rails" %>
                     <%= image_tag('rails-logo-thumbnail.png') %>
-                <% elsif "#{pin.category_id}" == "ruby" %>
+                <% elsif "#{pin.category.name}" == "ruby" %>
                     <%= image_tag('ruby-logo-thumbnail.png') %>                
                 <% end %>
-                </div>
+            </div>
       
                  
             <div class="pin-title col-xs-9">

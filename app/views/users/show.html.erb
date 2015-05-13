@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<div class="form-labels">
+    
+<p class="form-labels">
+  <strong>First name:</strong>
+  <%= @user.first_name %>
+</p>
+
+<p class="form-labels">
+  <strong>Last name:</strong>
+  <%= @user.last_name %>
+</p>
+
+<p class="form-labels">
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p class="form-labels">
+  <strong>Password:</strong>
+  <%= @user.password %>
+</p>
+
+</div>
+
+    
+    
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

@@ -1,0 +1,67 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+    background-color: #fff;
+    color: #333;
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+}
+
+h1.login {
+    text-align: center;
+}
+
+h3.login {
+    color: #FF9999;
+    font-weight: 600;
+    width: 100%;
+    text-align: center;
+    clear: both;
+    display: block;
+}
+
+.login-form {
+    text-align: center;
+    clear: both;
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+
+}
+
+/*button.login-button {
+    clear: both;
+    text-align: center;
+    position: relative;
+    display: block;
+}*/
+
+td.users {
+    padding: 10px;
+    margin: 10px;
+}
+
+td.button {
+    padding: 3px;
+    margin: 3px;
+    font-style: italic;
+    color: #00CED1;
+}
+
+p {
+    padding: 10px;
+    margin: 10px;
+}
+
+th {
+    padding: 10px;
+    margin: 10px;
+    margin-bottom: 1px, solid;
+}
+
+.new-link {
+    font-weight: bold;
+    color: #00CED1;
+}
