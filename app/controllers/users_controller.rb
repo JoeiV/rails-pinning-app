@@ -21,18 +21,18 @@ class UsersController < ApplicationController
   end 
     
   def authenticate
-      
+  
       @user = User.authenticate(params[:email], params[:password])
-      
-      if @user.valid?
-          @user.save
-          redirect_to @user
-      else
-          @errors = @user.errors
-          render :login
+      # Save the user ID in the session so it can be used in
+      # subsequent requests
+      if @user
+          redirect_to user_path(@user)
+      else 
+          @errors = @user.errors  
+          redirect_to login_path
       end
   end    
-      
+  
   # GET /users/1/edit
   def edit
   end

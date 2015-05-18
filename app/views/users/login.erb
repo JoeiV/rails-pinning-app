@@ -1,9 +1,19 @@
+  <% if @user.errors do |f| %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited login attempt:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+<% end %>
+
 <h1 class="login">Login</h1> 
 
 <%= form_tag "/login" %>
 
-
-    
 <h3 class="login">Email</h3>
 <div class ="login-form"><input id="email" name="email" type="email" value="email@example.com" /> </div>
 
@@ -12,4 +22,4 @@
 <div class ="login-form">
 <button class="login-button" name="button" type="submit">Login</button>
 </div>
- 
+<% end %>
