@@ -27,7 +27,7 @@ class UsersController < ApplicationController
         session[:user_id] = @user.id
         redirect_to root_url  
       else
-          @errors = @user.errors
+          @errors 
           redirect_to :login
      end
   end   
