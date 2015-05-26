@@ -12,6 +12,7 @@ RSpec.describe PinsController do
         it 'populates @pins with all pins' do
             get :index
             expect(assigns[:pins]).to eq(Pin.all)
+            #TO DO: change to show only the logged in user’s pins
         end
       
     end

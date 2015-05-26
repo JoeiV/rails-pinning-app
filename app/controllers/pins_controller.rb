@@ -1,5 +1,17 @@
 class PinsController < ApplicationController
-  
+   before_action :require_login, except: [:show, :show_by_name]
+    
+   before(:each) do 
+      @user = FactoryGirl.create(:user)
+      login_user(@user)
+    end
+
+    after(:each) do
+      if !@user.destroyed?
+        @user.destroy
+      end
+    end   
+    
   def index
       @pins = Pin.all
   end
@@ -49,7 +61,7 @@ class PinsController < ApplicationController
     private 
     
     def pin_params
-        params.require(:pin).permit(:title, :url, :slug, :text, :category_id)
+        params.require(:pin).permit(:title, :url, :slug, :text, :category_id, :image, :user_id)
     end
     
 end    

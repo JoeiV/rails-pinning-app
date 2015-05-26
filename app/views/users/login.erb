@@ -1,14 +1,14 @@
-  <% if @user.errors do |f| %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited login attempt:</h2>
-
+<% if !@errors.nil? %>
+  <div class="error">
+    <h2>Form is invalid</h2>
       <ul>
-      <% @user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+        <% @errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+    </ul>
+  </div>
 <% end %>
+
 
 <h1 class="login">Login</h1> 
 
@@ -22,4 +22,3 @@
 <div class ="login-form">
 <button class="login-button" name="button" type="submit">Login</button>
 </div>
-<% end %>

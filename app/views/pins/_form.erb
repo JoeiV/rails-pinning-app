@@ -9,6 +9,7 @@
   </div>
 <% end %>
 
+<%= f.hidden_field :user, value: #{current_user} %> 
 
 <form class="form-horizontal">
     <%= form_for @pin do |f| %>
