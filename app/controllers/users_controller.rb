@@ -89,5 +89,11 @@ class UsersController < ApplicationController
     def user_params
         params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
     end
+    
+    def require_login 
+        if current_user.nil?
+            redirect_to :login
+        end
+    end
         
 end

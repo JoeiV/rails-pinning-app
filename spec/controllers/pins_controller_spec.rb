@@ -1,6 +1,8 @@
 require 'spec_helper'
 
-RSpec.describe PinsController do
+before_action :require_login, except: [:show, :show_by_name]
+
+    RSpec.describe PinsController do
     
     describe "GET index" do
         
