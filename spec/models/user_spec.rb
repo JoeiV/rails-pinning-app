@@ -16,4 +16,17 @@ RSpec.describe User, type: :model do
     it 'authenticates and returns a user when valid email and password passed in' do
 
     end
+    
+    it { should validate_presence_of(:first_name) }
+
 end
+
+FactoryGirl.define do
+  factory :user do 
+    sequence(:email) { |n| "coder#{n}@skillcrush.com" }
+    first_name "Skillcrush"
+    last_name "Coder"
+    password "secret"
+  end
+end 
+

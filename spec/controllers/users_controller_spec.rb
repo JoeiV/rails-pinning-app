@@ -1,4 +1,4 @@
-require 'rails_helper'
+require 'spec_helper'
 
 RSpec.describe UsersController, type: :controller do
 
@@ -17,6 +17,32 @@ RSpec.describe UsersController, type: :controller do
   # in order to pass any filters (e.g. authentication) defined in
   # UsersController. Be sure to keep this updated too.
   let(:valid_session) { {} }
+    
+  before(:each) do 
+      @user = FactoryGirl.build(:user)
+    end
+    after(:each) do
+     if !@user.destroyed?
+         @user.destroy
+     end
+    end
+    
+    let(:valid_attributes) {
+      {
+        first_name: @user.first_name,
+        last_name: @user.last_name,
+        email: @user.email,
+        password: @user.password
+      }
+    } 
+    
+   let(:invalid_attributes) {
+      {
+        first_name: @user.first_name,
+        password: @user.password
+      }
+    }
+
 
   describe "GET #index" do
     it "assigns all users as @users" do

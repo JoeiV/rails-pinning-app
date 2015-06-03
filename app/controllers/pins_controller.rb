@@ -1,16 +1,16 @@
 class PinsController < ApplicationController
-   before_action :require_login, except: [:show, :show_by_name]
+#    before_action :require_login, except: [:show, :show_by_name]
     
-   before(:each) do 
-      @user = FactoryGirl.create(:user)
-      login_user(@user)
-    end
+#    before(:each) do 
+#       @user = FactoryGirl.create(:user)
+#       login_user(@user)
+#     end
 
-    after(:each) do
-      if !@user.destroyed?
-        @user.destroy
-      end
-    end   
+#     after(:each) do
+#       if !@user.destroyed?
+#         @user.destroy
+#       end
+#     end   
     
   def index
       @pins = Pin.all
@@ -43,7 +43,14 @@ class PinsController < ApplicationController
     
   def edit
       @pin = Pin.find(params[:id])
-      render :edit 
+      
+      if @pin.valid?
+          @pin.save
+          redirect_to pin_path(@pin)
+      else
+          @errors = @pin.errors
+          render :edit
+      end
   end
    
   def update  

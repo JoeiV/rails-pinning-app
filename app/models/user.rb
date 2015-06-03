@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
     
-    attr_accessor :password
+    #attr_accessor :password
     before_save :encrypt_password
   
     #validates_confirmation_of :password
@@ -20,26 +20,16 @@ class User < ActiveRecord::Base
 
     
     def self.authenticate(email, password)
-        user = User.where(email: email).first
-        if user && user.password_hash == BCrypt::Engine.hash_secret(password, user.password_salt)
-            user
-        else
-            nil
+      @user = User.find_by_email(email)
+
+      if !@user.nil?
+        if @user.authenticate(password)
+          return @user
         end
+      end
+
+      return nil
     end
-  
-    #Skillcrush code:
-#     def self.authenticate(email, password)
-#       @user = User.find_by_email(email)
-
-#       if !@user.nil?
-#         if @user.authenticate(password)
-#           return @user
-#         end
-#       end
-
-#       return nil
-#     end
 
   
 end
