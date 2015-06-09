@@ -26,7 +26,7 @@ class PinsController < ApplicationController
   end
   
   def new
-      @pin = Pin.create(params[:new]) 
+      @pin = Pin.new(params[:new]) 
   end
     
   def create
@@ -43,14 +43,13 @@ class PinsController < ApplicationController
     
   def edit
       @pin = Pin.find(params[:id])
-      
       render :edit
   end
    
   def update  
-      if @pin.update_attributes(pin_params)      
-          @pin.save
-          redirect_to pin_path(@pin)
+      @pin = Pin.update_attributes(pin_params)
+      if @pin.save
+          redirect_to @pin
       else
           @errors = @pin.errors
           render :edit
