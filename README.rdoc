@@ -1,13 +1,10 @@
-== README
+== Photo pinning app
 
-Photo pinning app
-==============
+====== This is a basic photo pinning app (think Pinterest) built using Ruby on Rails, with Ruby version 2.1.5 and Rails version 4.2.0.  
 
-######This is a basic photo pinning app (think Pinterest) built using Ruby on Rails, with Ruby version 2.1.5 and Rails version 4.2.0.  
+====== The app authentication was developed without using Ruby Gems Devise, OmniAuth, Authlogic, etc. to better grasp the underpinnings of user administration. 
 
-######The app authentication was developed without using Ruby Gems Devise, OmniAuth, Authlogic, etc. to better grasp the underpinnings of user administration. 
-
-####Dependencies:
+==== Dependencies:
   bcrypt (~> 3.1.7)   
   byebug   
   coffee-rails (~> 4.1.0)  
